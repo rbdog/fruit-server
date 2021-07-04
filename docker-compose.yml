@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  db:
+    container_name: "db"
+    build: ./db
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=fruitdb
+
+      # *** テスト用に全ホストからアクセス許可 ***
+      - POSTGRES_HOST_AUTH_METHOD=trust 
+      # ************************************
+
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d # ファイルをマウントしてDBを立ち上げた後でSQLを自動実行
+    networks:
+      - app-net # ネットワークを指定して、コンテナ間で通信する
+
+  webapi:
+    depends_on:
+        - db # db起動後に立ち上げる
+    links:
+        - db:db
+    container_name: "webapi"
+    build: ./webapi/
+    # tty: true
+    ports:
+      - 8000:8000
+    volumes:
+      - ./webapi/src:/webapi
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
+
