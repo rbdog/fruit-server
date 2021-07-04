@@ -1,0 +1,7 @@
+psycopg2
+sqlalchemy
+uvicorn 
+fastapi
+jinja2
+aiofiles
+mysql-connector-python-rf
