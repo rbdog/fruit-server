@@ -3,13 +3,10 @@ from sqlalchemy import Column, Integer, String, DateTime
 # テーブルとの紐付けに使用するBaseオブジェクト
 from db import Base
 
-# テーブル名
-TABLE_NAME = 'fruits'
-
 # Fruit モデル
 class Fruit(Base):
     # テーブルと紐付ける
-    __tablename__ = TABLE_NAME
+    __tablename__ = 'fruits'
 
     # id カラム
     id = Column(Integer, primary_key=True)
