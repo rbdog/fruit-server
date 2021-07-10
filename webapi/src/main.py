@@ -48,8 +48,8 @@ def read_fruits():
     for fruits in fruits:
         json_objects.append(fruits.json_object())
     joind_json = ','.join(json_objects)
-    wrapped_data = '{"data":{"fruits":[' + joind_json +']}}'
-    return wrapped_data
+    json_fruits = '[' + joind_json + ']'
+    return json_fruits
 
 @app.post("/api/fruits")
 async def create_fruits(request: Request):
