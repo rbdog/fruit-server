@@ -1,2 +1,4 @@
 
 .DS_Store
+webapi/src/__pycache__
+webapi/src/static/.last_build_id
