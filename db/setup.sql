@@ -8,17 +8,20 @@ CREATE TABLE fruits
    PRIMARY KEY (id)
 );
 
-INSERT INTO fruits (name, price, created_at, updated_at) VALUES(
+INSERT INTO fruits (name, price, created_at, updated_at) VALUES
+(
   'リンゴ',
   120,
   TO_TIMESTAMP('2007/01/09 00:42:00', 'YYYY/MM/DD HH24:MI:SS'),
   TO_TIMESTAMP('2010/01/27 00:41:00', 'YYYY/MM/DD HH24:MI:SS')
-),(
+),
+(
   'オレンジ',
   180,
   TO_TIMESTAMP('2002/10/14 14:23:14', 'YYYY/MM/DD HH24:MI:SS'),
   TO_TIMESTAMP('2014/05/26 01:36:58', 'YYYY/MM/DD HH24:MI:SS')
-),(
+),
+(
   'バナナ',
   240,
   TO_TIMESTAMP('2001/05/27 16:52:40', 'YYYY/MM/DD HH24:MI:SS'),
