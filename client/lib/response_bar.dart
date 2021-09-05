@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import './components.dart';
 
 class ResponseBar extends StatelessWidget {
-  bool isLoading;
-  String statusCode;
+  final bool isLoading;
+  final String statusCode;
   ResponseBar({required this.isLoading, required this.statusCode});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.all(20),
-        child: Row(children: [
+      padding: EdgeInsets.all(20),
+      child: Row(
+        children: [
           Text(
             '>>',
             style: TextStyle(
@@ -22,7 +22,9 @@ class ResponseBar extends StatelessWidget {
           isLoading
               ? Icon(Icons.refresh, color: Colors.green)
               : Icon(Icons.check_circle_outline, color: Colors.green),
-          SpaceBox.width(5),
+          SizedBox(
+            width: 8,
+          ),
           Text(
             'Response',
             style: TextStyle(
@@ -30,7 +32,7 @@ class ResponseBar extends StatelessWidget {
               color: Colors.green,
             ),
           ),
-          SpaceBox.width(30),
+          SizedBox(width: 30),
           Text(
             'StatusCode: ',
             style: TextStyle(
@@ -45,7 +47,9 @@ class ResponseBar extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
-          SpaceBox.width(30)
-        ]));
+          SizedBox(width: 30),
+        ],
+      ),
+    );
   }
 }
