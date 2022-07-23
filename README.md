@@ -6,7 +6,7 @@ WebAPIサーバーが管理ページのホスティングを兼ねています
 
 - 管理ページ: Flutter (Dart)
 - WebAPI: FastAPI (Python)
-- DB: PostgresSQL (RDBMS)
+- DB: PostgreSQL (RDBMS)
 
 ## 使い方
 
